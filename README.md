@@ -33,8 +33,10 @@ To analyze the most consistent passive walking trial captured via 2D video, foll
 | `com_trajectory.png` | Center of mass (X, Y) displacement |
 | `energy_dynamics.png` | Detrended potential energy and kinetic energy |
 
-Example:  
-![Gait Angles](plots/stance_vs_time.png)
+### 📁 Example Plots
+
+[View all plots](plots/)
+
 
 ---
 ## 🔍 Report Analysis Guide

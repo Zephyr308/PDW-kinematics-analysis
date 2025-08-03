@@ -37,6 +37,31 @@ Example:
 ![Gait Angles](plots/stance_vs_time.png)
 
 ---
+## 🔍 Report Analysis Guide
+
+In line with the coursework brief, interpret your results based on the following criteria:
+
+### 1. Gait Symmetry
+- Are the **stance** and **interleg angles** smooth and periodic?
+- Do the **state-space trajectories** (interleg vs stance) form regular loops across steps?
+
+### 2. Energy Patterns
+- Does the **detrended potential energy (PE)** show rhythmic fluctuations?
+- Is the **cycling of PE and kinetic energy (KE)** consistent with your PDW simulation results?
+
+### 3. Stability
+- Are there increasing **deviations in angle profiles or CoM drift** over time?
+- Do you observe signs of **instability or limping behavior**?
+
+---
+
+## 🧠 Background: DLTdv8 Workflow
+
+The motion capture data used in this analysis was digitized using **DLTdv8 (v8.1)** from a high-frame-rate side-view video of the passive dynamic walker.
+
+For more details on the digitizing workflow, refer to the [DLTdv8 tutorial](http://biomech.web.unc.edu/dltdv8_manual/#trackingTutorial).
+
+---
 
 ## 📂 File Structure
 

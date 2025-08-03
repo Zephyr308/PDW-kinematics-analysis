@@ -18,7 +18,7 @@ end
 %% -------------------------------
 % 1. Load and process digitized data
 % -------------------------------
-filename = 'DLTdv8_data_final_adjustedy_xypts.csv';  % Update filename if needed
+filename = 'sample_data.csv';  % Update filename if needed
 
 if ~isfile(filename)
     error('File not found: %s', filename);

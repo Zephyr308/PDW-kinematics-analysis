@@ -54,6 +54,18 @@ In line with the coursework brief, interpret your results based on the following
 - Do you observe signs of **instability or limping behavior**?
 
 ---
+## ▶️ How to Run
+
+1. Open **MATLAB**
+2. Navigate to the `src/` directory
+3. Run the main script:
+
+```matlab
+run_gait_analysis
+filename = '../data/sample_data.csv';
+```
+
+---
 
 ## 🧠 Background: DLTdv8 Workflow
 

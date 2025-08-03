@@ -1,92 +1,71 @@
-# Passive Dynamic Walker (PDW) 2D Kinematics Analysis
+# 🦿 Passive Dynamic Walker: 2D Gait Analysis in MATLAB
 
-This MATLAB-based project performs kinematic and energy analysis on a digitized passive dynamic walker (PDW) trial. It was developed for the **Animal Locomotion and Bio-inspired Robotics** unit at **Imperial College London**.
+This repository contains a MATLAB-based pipeline for analyzing the 2D gait kinematics of a Passive Dynamic Walker (PDW) from video-based digitized marker data.
 
----
+It supports processing and visualizing:
 
-## 🎯 Objective
+- Gait angles (stance and inter-leg)
+- State-space trajectories
+- Center of mass (CoM) movement
+- Energy dynamics (Potential and Kinetic Energy)
 
-To analyze the most consistent passive walking trial captured via 2D video, following digitization in **DLTdv8**. This includes:
+## 📷 Example Plots
 
-- Computing joint angles and gait patterns
-- Estimating center of mass (CoM) trajectories
-- Analyzing potential and kinetic energy over time
-- Comparing experimental results with simulated PDW behavior
-
----
-
-## 🧪 Methods
-
-- Marker trajectories were digitized using **DLTdv8** from side-view PDW video.
-- Time-series kinematic data were loaded in MATLAB for further processing.
-- Absolute interleg angles, stance leg angles, CoM displacement, and energy profiles were computed.
-- Non-dimensional time was used for normalized visualization across steps.
+Example analysis plots from sample runs can be found in the [`/plots`](./plots) folder.
 
 ---
 
-## 📈 Key Plots
+## 📋 Features
 
-| Plot Type | Description |
-|-----------|-------------|
-| `stance_vs_time.png` | Stance and interleg angle vs time |
-| `interleg_vs_stance.png` | Step-wise state-space trajectory |
-| `com_trajectory.png` | Center of mass (X, Y) displacement |
-| `energy_dynamics.png` | Detrended potential energy and kinetic energy |
-
-### 📁 Example Plots
-
-[View all plots](plots/)
-
+- 📈 Plot leg angles over time (absolute & non-dimensional)
+- 🔁 Visualize state-space trajectory across multiple steps
+- 🎯 Estimate center of mass trajectory
+- ⚡ Compute and plot PE and KE
+- 🖼️ Automatically saves all generated figures to the `/plots` directory
 
 ---
-## 🔍 Report Analysis Guide
 
-In line with the coursework brief, interpret your results based on the following criteria:
-
-### 1. Gait Symmetry
-- Are the **stance** and **interleg angles** smooth and periodic?
-- Do the **state-space trajectories** (interleg vs stance) form regular loops across steps?
-
-### 2. Energy Patterns
-- Does the **detrended potential energy (PE)** show rhythmic fluctuations?
-- Is the **cycling of PE and kinetic energy (KE)** consistent with your PDW simulation results?
-
-### 3. Stability
-- Are there increasing **deviations in angle profiles or CoM drift** over time?
-- Do you observe signs of **instability or limping behavior**?
-
----
 ## ▶️ How to Run
 
-1. Open **MATLAB**
+1. Open MATLAB
 2. Navigate to the `src/` directory
 3. Run the main script:
 
 ```matlab
 run_gait_analysis
-filename = '../data/sample_data.csv';
+```
+Make sure the digitized data file is correctly specified in the script:
+```matlab
+filename = '../data/your_data_file.csv';
+```
+## 📂 Folder structure
+```graphql
+PDW_Gait_Analysis/
+├── data/              # Digitized CSV files from DLTdv8
+├── plots/             # Auto-generated figures
+├── src/               # MATLAB source scripts
+├── BACKGROUND.md      # Theoretical and experimental context
+└── README.md          # This file
 ```
 
----
 
-## 🧠 Background: DLTdv8 Workflow
+## 📚 Background
 
-The motion capture data used in this analysis was digitized using **DLTdv8 (v8.1)** from a high-frame-rate side-view video of the passive dynamic walker.
-
-For more details on the digitizing workflow, refer to the [DLTdv8 tutorial](http://biomech.web.unc.edu/dltdv8_manual/#trackingTutorial).
+The analysis is based on a simplified **inverted pendulum model** of legged locomotion.  
+For details on the physical setup, digitizing workflow, and theoretical context, see [`BACKGROUND.md`](./BACKGROUND.md).
 
 ---
 
-## 📂 File Structure
+## 🔧 Requirements
 
-```text
-src/
-  run_gait_analysis.m       - Main script
-  calculateAngles3.m        - Interleg angle (A-B-C)
-  calculateAngles4.m        - Angle vs ramp vector
+- MATLAB R2019a or later  
+- [DLTdv8](http://biomech.web.unc.edu/dltdv/) (for digitizing marker coordinates)  
+  ➤ Includes documentation and tutorials for video annotation
 
-data/
-  sample_data.csv           - Example marker data
+---
 
-plots/
-  *.png                     - Generated figures
+## 📌 Notes
+
+- This pipeline assumes a **2D side-view recording** and uses a **fixed column format** in the CSV file.
+- Ensure your data is **calibrated** using a known reference length in pixels (e.g., ramp step height).
+- You can **manually adjust** step segmentation and calibration parameters in the script.

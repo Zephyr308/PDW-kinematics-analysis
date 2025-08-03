@@ -53,7 +53,7 @@ The physical PDW system includes:
 - Passive joints at hips and feet
 - Optional visual markers for motion tracking
 
-> ![PDW Setup](plots/pdw_setup_photo.jpg)  
+> ![PDW Setup](plots/pdw_setup.png)  
 > *Figure: Physical setup of the Passive Dynamic Walker*
 
 ---
